@@ -8,32 +8,31 @@ Symmetric difference is a binary operation, which means it operates on only two 
 Create a function that takes two or more arrays and returns an array of their symmetric difference. The returned array must contain only unique values (no duplicates).
 */
 
-// 5/22
 
-duplicates = [];
-symDif = [];
+let duplicates = [];
+let symDif = [];
 
 function sym(A, B) {
 
     for(i = 0; i < A.length; i++) {
         for(j = 0; j < B.length; j++) {
             if (A[i] !== B[j])
-                    {
-                        duplicates.push(A[i]);
-                    };
-            };
+                {
+                    duplicates.push(A[i]);
+                };
         };
+    };
 
-    duplicates.forEach((element, index, array) => {
+    let test = duplicates.reduce((accumulator, currentValue) => {
 
-        if(array[index] !== element) {
-            symDif.push(element);
+        if(accumulator.indexOf(currentValue) === -1) {
+            accumulator.push(currentValue);
         };
+        return accumulator
+    }, []);
 
-    });
-
+    console.log(test);
 }
 
 sym([1, 2, 3], [5, 2, 1, 4]);
 
-console.log(symDif);

@@ -9,30 +9,26 @@ Create a function that takes two or more arrays and returns an array of their sy
 */
 
 
-let duplicates = [];
-let symDif = [];
+const symDif = [];
 
 function sym(A, B) {
 
-    for(i = 0; i < A.length; i++) {
-        for(j = 0; j < B.length; j++) {
-            if (A[i] !== B[j])
-                {
-                    duplicates.push(A[i]);
-                };
-        };
-    };
+  for(i = 0; i < A.length; i++) {
+      if (!B.includes(A[i]))
+          {
+            symDif.push(A[i]);
+          };
+  };
 
-    let test = duplicates.reduce((accumulator, currentValue) => {
+  for(i = 0; i < B.length; i++) {
+    if (!A.includes(B[i]))
+      {
+        symDif.push(B[i]);
+      };
+  };
 
-        if(accumulator.indexOf(currentValue) === -1) {
-            accumulator.push(currentValue);
-        };
-        return accumulator
-    }, []);
-
-    console.log(test);
+  console.log(symDif);
 }
 
-sym([1, 2, 3], [5, 2, 1, 4]);
+sym([1, 2, 3, 4, 5, 6], [2, 3, 4, 5, 6, 7]);
 

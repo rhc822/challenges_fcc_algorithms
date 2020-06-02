@@ -9,26 +9,31 @@ Create a function that takes two or more arrays and returns an array of their sy
 */
 
 
-const symDif = [];
+// const symDif = [];
 
-function sym(A, B) {
+// function sym(A, B) {
 
-  for(i = 0; i < A.length; i++) {
-      if (!B.includes(A[i]))
-          {
-            symDif.push(A[i]);
-          };
-  };
+//   for(i = 0; i < A.length; i++) {
+//       if (!B.includes(A[i]))
+//           {
+//             symDif.push(A[i]);
+//           };
+//   };
 
-  for(i = 0; i < B.length; i++) {
-    if (!A.includes(B[i]))
-      {
-        symDif.push(B[i]);
-      };
-  };
+//   for(i = 0; i < B.length; i++) {
+//     if (!A.includes(B[i]))
+//       {
+//         symDif.push(B[i]);
+//       };
+//   };
 
-  console.log(symDif);
+//   console.log(symDif);
+// }
+
+// sym([1, 2, 3], [2, 3, 4]);
+
+function test(){
+  console.log(arguments);
 }
 
-sym([1, 2, 3, 4, 5, 6], [2, 3, 4, 5, 6, 7]);
-
+test(1, 2, 3);
